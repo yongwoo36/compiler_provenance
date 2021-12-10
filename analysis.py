@@ -100,7 +100,8 @@ if __name__ == '__main__':
         same_c = 0
         diff_c = 0
         for filename in os.listdir(c):
-            if filename in train_set[c] or '.json' in filename: continue
+            # if filename in train_set[c] or filename.endswith('.json'): continue
+            if filename.endswith('.json'): continue
             binary = os.path.join(c, filename)
             target = get_frequency_vector(binary)
 
